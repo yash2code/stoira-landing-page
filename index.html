@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoira | AI-Native Studio OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #9333ea;
+            --bg: #050505;
+        }
+        body {
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .bento-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(147, 51, 234, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .mesh-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(147, 51, 234, 0.05) 0px, transparent 50%);
+            filter: blur(100px);
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); }
+
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="mesh-gradient"></div>
+
+    <!-- Nav -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-5xl">
+        <div class="bento-card px-8 py-4 flex items-center justify-between border-white/10 bg-black/40 backdrop-blur-xl">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                <span class="font-black italic tracking-tighter text-xl">STOIRA</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[10px] mono uppercase tracking-widest font-bold text-white/40">
+                <a href="#pipeline" class="hover:text-purple-400 transition-colors">Pipeline</a>
+                <a href="#studio" class="hover:text-purple-400 transition-colors">Studio</a>
+                <a href="mailto:contact@stoira.com" class="hover:text-purple-400 transition-colors">Contact</a>
+            </div>
+            <a href="mailto:contact@stoira.com" class="px-5 py-2 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-purple-400 transition-all">
+                Partner
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-56 pb-32 px-6 max-w-6xl mx-auto">
+        <div class="reveal">
+            <span class="mono text-xs text-purple-400 uppercase tracking-[0.3em] font-bold mb-6 block">AI-Native Studio OS</span>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-10 leading-[0.85]">
+                RETHINK<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-400">PRODUCTION.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white/40 font-medium max-w-2xl mb-12 leading-relaxed">
+                We're building the end-to-end pipeline for the next generation of film studios. From first draft to global localization.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="mailto:contact@stoira.com" class="px-10 py-5 bg-purple-600 rounded-2xl font-bold uppercase tracking-widest text-xs btn-glow hover:bg-purple-500 transition-all">
+                    Start a Project
+                </a>
+                <div class="px-8 py-5 bento-card border-white/10 text-xs font-bold uppercase tracking-widest flex items-center gap-3">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                    Available for Partnerships
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bento Pipeline Section -->
+    <section id="pipeline" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16 reveal">
+            <h2 class="text-4xl font-bold tracking-tight">The Pipeline OS</h2>
+            <p class="text-white/40 mt-2">A modular infrastructure for cinematic scale.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+            
+            <!-- Large Main Card -->
+            <div class="bento-card md:col-span-8 md:row-span-2 p-12 flex flex-col justify-between reveal">
+                <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent"></div>
+                </div>
+                <div>
+                    <span class="px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full text-[10px] mono uppercase font-bold mb-8 inline-block tracking-widest">Core Layer</span>
+                    <h3 class="text-4xl font-bold mb-4 tracking-tighter">Pre-Production<br>& Cinematic Previz</h3>
+                    <p class="text-white/40 max-w-md text-lg">Our flagship engine. Storyboards, animatics, and camera blocking at the speed of thought.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="px-4 py-2 bento-card text-[10px] mono">Camera Blocking</span>
+                    <span class="px-4 py-2 bento-card text-[10px] mono">Continuity Systems</span>
+                    <span class="px-4 py-2 bento-card text-[10px] mono">Virtual Scouting</span>
+                </div>
+            </div>
+
+            <!-- Writer Room -->
+            <div class="bento-card md:col-span-4 p-8 flex flex-col justify-between reveal">
+                <h4 class="text-xl font-bold">Writer's Room</h4>
+                <p class="text-sm text-white/30">AI script ideation, character bibles, and franchise bibles.</p>
+                <div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full w-full bg-purple-500/40"></div>
+                </div>
+            </div>
+
+            <!-- Localization -->
+            <div class="bento-card md:col-span-4 p-8 flex flex-col justify-between reveal">
+                <h4 class="text-xl font-bold">Post & Global</h4>
+                <p class="text-sm text-white/30">Localization, AI dubbing, and automated trailer hooks.</p>
+                <div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div class="h-full w-1/2 bg-blue-500/40"></div>
+                </div>
+            </div>
+
+            <!-- Virtual Production -->
+            <div class="bento-card md:col-span-6 p-8 flex flex-col justify-between reveal">
+                <h4 class="text-xl font-bold">Virtual Production</h4>
+                <p class="text-sm text-white/30">Extras simulation, stunt previs, and LED wall assets.</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span class="text-[10px] mono text-white/20 uppercase tracking-widest">Internal Beta</span>
+                </div>
+            </div>
+
+            <!-- IP Assets -->
+            <div class="bento-card md:col-span-6 p-8 flex flex-col justify-between reveal">
+                <h4 class="text-xl font-bold">Asset Layer</h4>
+                <p class="text-sm text-white/30">Private character AI models and franchise asset ownership.</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-[10px] mono text-white/20 uppercase tracking-widest">Enterprise Ready</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Studio CTA -->
+    <section id="studio" class="py-40 px-6 max-w-4xl mx-auto text-center">
+        <div class="reveal">
+            <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-10">THE FUTURE IS<br><span class="italic font-serif">NATIVE.</span></h2>
+            <p class="text-white/40 text-lg mb-12">
+                We're partnering with visionary studios to build the AI-native future. No generic tools. Just pure production outcomes.
+            </p>
+            <div class="bento-card p-12 border-white/10 bg-gradient-to-br from-white/5 to-transparent">
+                <span class="mono text-[10px] text-purple-400 uppercase tracking-widest mb-4 block">Official Partnership Inquiries</span>
+                <a href="mailto:contact@stoira.com" class="text-4xl md:text-6xl font-black underline decoration-1 underline-offset-8 hover:text-purple-400 transition-all tracking-tighter">
+                    contact@stoira.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 opacity-20">
+            <span class="font-black italic tracking-tight">STOIRA STUDIO</span>
+            <div class="flex gap-10 text-[10px] mono uppercase tracking-[0.2em]">
+                <span>2026 // Pipeline</span>
+                <span>Bengaluru // Global</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Simple staggered reveal for bento cards
+        gsap.utils.toArray('.reveal').forEach((elem) => {
+            gsap.to(elem, {
+                scrollTrigger: elem,
+                y: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "power4.out",
+                stagger: 0.2
+            });
+        });
+    </script>
+</body>
+</html>
