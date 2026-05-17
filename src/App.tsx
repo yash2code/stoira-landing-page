@@ -5,7 +5,6 @@ import Hero from './components/dom/Hero'
 import Navbar from './components/dom/Navbar'
 import BentoGrid from './components/dom/BentoGrid'
 import PipelineSection from './components/dom/PipelineSection'
-import PricingTiers from './components/dom/PricingTiers'
 import Footer from './components/dom/Footer'
 import StudioWorkbench from './components/studio/StudioWorkbench'
 
@@ -25,7 +24,6 @@ function LandingPage() {
         <Hero />
         <PipelineSection />
         <BentoGrid />
-        <PricingTiers />
         <Footer />
       </div>
     </div>
@@ -34,7 +32,7 @@ function LandingPage() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/stoira-landing-page">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/studio" element={<StudioWorkbench />} />
