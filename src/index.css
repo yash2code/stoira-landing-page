@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-obsidian: #050505;
+  --color-amber: #EAB308;
+  --color-zinc-800: #27272a;
+}
+
+body {
+  background-color: var(--color-obsidian);
+  color: #fafafa;
+  font-family: 'Syne', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image: 
+    linear-gradient(rgba(39, 39, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 39, 42, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.font-mono {
+  font-family: "Geist Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-amber);
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@layer components {
+  .industrial-card {
+    border-radius: 0;
+    border: 1px solid var(--color-zinc-800);
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .industrial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-amber), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .industrial-card:hover::before {
+    opacity: 0.5;
+  }
+
+  .tactical-label {
+    font-family: "Geist Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-amber);
+    opacity: 0.8;
+  }
+
+  .btn-tactical {
+    @apply px-6 py-3 border border-stoira-amber text-stoira-amber font-mono text-sm uppercase tracking-widest transition-all duration-300;
+    border-radius: 0;
+  }
+
+  .btn-tactical:hover {
+    @apply bg-stoira-amber text-obsidian;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+  }
+}
+
+/* Remove rounded corners globally for a more industrial look */
+* {
+  border-radius: 0 !important;
+}
